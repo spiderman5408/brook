@@ -137,9 +137,9 @@ Download_brook(){
     [[ ! -e ${file} ]] && mkdir ${file}
     cd ${file}
     if [[ ${bit} == "x86_64" ]]; then
-        wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook"
+        wget --no-check-certificate -N "https://spider-1300246764.cos.ap-beijing.myqcloud.com/brook/brook_linux_386"
     else
-        wget --no-check-certificate -N "https://github.com/txthinking/brook/releases/download/${brook_new_ver}/brook_linux_386"
+        wget --no-check-certificate -N "https://spider-1300246764.cos.ap-beijing.myqcloud.com/brook/brook_linux_386"
         mv brook_linux_386 brook
     fi
     [[ ! -e "brook" ]] && echo -e "${Error} Brook 下载失败 !" && exit 1
@@ -147,7 +147,7 @@ Download_brook(){
 }
 Service_brook(){
     if [[ ${release} = "centos" ]]; then
-        if ! wget --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/brook-pf_centos -O /etc/init.d/brook-pf; then
+        if ! wget --no-check-certificate https://spider-1300246764.cos.ap-beijing.myqcloud.com/brook/brook-pf_centos -O /etc/init.d/brook-pf; then
             echo -e "${Error} Brook服务 管理脚本下载失败 !" && exit 1
         fi
         chmod +x /etc/init.d/brook-pf
